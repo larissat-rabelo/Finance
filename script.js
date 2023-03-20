@@ -46,7 +46,7 @@ class BD {
             if(despesa === null) {
                 continue
             }
-            despesa.id = 1;
+            despesa.id = i;
             despesas.push(despesa)
         }
         return despesas
@@ -178,7 +178,6 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
             window.location.reload()
         }
         linha.insertCell(4).append(btn)
-        console.log(d)
     })
 }
 
@@ -193,5 +192,5 @@ function filtroPesquisa() {
     let despesa = new Despesa (ano,mes,dia,tipo,descricao,valor)
     let despesas = bd.pesquisar(despesa);
     
-    this.carregaListaDespesas(despesas,true)
+    this.carregaListaDespesas(despesas, true)
 } 
